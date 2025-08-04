@@ -14,7 +14,6 @@
         <home-swiper :banners="banners"
                      ref="hSwiper"></home-swiper>
         <feature-view :features="recommends"></feature-view>
-        <recommend-view></recommend-view>
         <tab-control @itemClick="tabClick"
                      :titles="['流行', '新款', '精选']"
                      ref="tabControl"></tab-control>
@@ -34,7 +33,6 @@
   import BackTop from 'content/backTop/BackTop'
   import HomeSwiper from './childComps/HomeSwiper'
   import FeatureView from './childComps/FeatureView'
-  import RecommendView from './childComps/RecommendView'
   import GoodsList from './childComps/GoodsList'
   import {getHomeMultidata, getHomeData, RECOMMEND, BANNER} from "network/home";
   import {NEW, POP, SELL, BACKTOP_DISTANCE} from "@/common/const";
@@ -48,7 +46,6 @@
       BackTop,
       HomeSwiper,
       FeatureView,
-      RecommendView,
       GoodsList,
     },
     data() {
@@ -88,8 +85,6 @@
       this.$refs.hSwiper.stopTimer()
     },
     updated() {
-      // this.tabOffsetTop = this.$refs.tabControl.$el.offsetTop
-      // console.log(this.tabOffsetTop);
     },
     methods: {
 		  tabClick(index) {

@@ -8,7 +8,6 @@
     </div>
   </div>
 </template>
-
 <script>
 	export default {
 		name: "TabControl",
@@ -36,7 +35,6 @@
     }
 	}
 </script>
-
 <style scoped>
   .tab-control {
     display: flex;

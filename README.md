@@ -24,5 +24,5 @@ npm run test
 ```
 npm run lint
 ```
-###Projenin son hali aşağıya bırakılmıştır.
+### Projenin son hali aşağıya bırakılmıştır.
 <img width="1895" height="952" alt="image" src="https://github.com/user-attachments/assets/f56664a2-6fa5-425d-bad5-32bc11742218" />

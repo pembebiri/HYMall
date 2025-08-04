@@ -24,7 +24,7 @@
   }
 </script>
 
-<style>
+<style >
   @import "assets/css/base.css";
 
   #app {

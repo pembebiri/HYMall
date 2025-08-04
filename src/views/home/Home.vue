@@ -18,6 +18,7 @@
                      :titles="['流行', '新款', '精选']"
                      ref="tabControl"></tab-control>
         <goods-list :goods-list="showGoodsList"></goods-list>
+        <FashionList :items="fashionItems"></FashionList>
       </div>
     </scroll>
     <back-top @backTop="backTop" class="back-top" v-show="showBackTop">
@@ -34,6 +35,8 @@
   import HomeSwiper from './childComps/HomeSwiper'
   import FeatureView from './childComps/FeatureView'
   import GoodsList from './childComps/GoodsList'
+  import FashionList from './childComps/FashionList.vue'
+
   import {getHomeMultidata, getHomeData, RECOMMEND, BANNER} from "network/home";
   import {NEW, POP, SELL, BACKTOP_DISTANCE} from "@/common/const";
 
@@ -47,6 +50,7 @@
       HomeSwiper,
       FeatureView,
       GoodsList,
+      FashionList
     },
     data() {
 		  return {
@@ -60,7 +64,17 @@
         currentType: POP,
         isTabFixed: false,
         tabOffsetTop: 0,
-        showBackTop: false
+        showBackTop: false,
+        fashionItems: [
+         { title: 'Birinci', img: require('@/assets/img/home/image1.png'), link: '#' },
+         { title: 'İkinci', img: require('@/assets/img/home/image2.png'), link: '#' },
+         { title: 'Üçüncü', img: require('@/assets/img/home/image3.png'), link: '#' },
+         { title: 'Dördüncü', img: require('@/assets/img/home/image4.png'), link: '#' },
+         { title: 'Beşinci', img: require('@/assets/img/home/image5.png'), link: '#' },
+         { title: 'Altıncı', img: require('@/assets/img/home/image6.png'), link: '#' },
+         { title: 'Yedinci', img: require('@/assets/img/home/image7.png'), link: '#' },
+         { title: 'Sekizinci', img: require('@/assets/img/home/image8.png'), link: '#' }
+]
       }
     },
     computed: {
@@ -70,10 +84,8 @@
     },
     created() {
       console.log('创建Home');
-      // 1.请求多个数据
       this.getMultiData()
 
-      // 2.请求商品数据
       this.getHomeProducts(POP)
       this.getHomeProducts(NEW)
       this.getHomeProducts(SELL)
@@ -101,10 +113,8 @@
         }
       },
       contentScroll(position) {
-		    // 1.决定tabFixed是否显示
         this.isTabFixed = position.y < -this.tabOffsetTop
 
-        // 2.决定backTop是否显示
         this.showBackTop = position.y < -BACKTOP_DISTANCE
       },
       loadMore() {
@@ -113,14 +123,11 @@
       backTop() {
         this.$refs.scroll.scrollTo(0, 0, 300)
       },
-      /**
-       * 网络请求相关方法
-       */
+ 
       getMultiData() {
         getHomeMultidata().then(res => {
           this.banners = res.data[BANNER].list
           this.recommends = res.data[RECOMMEND].list
-          // 下次更新DOM时,获取新的tabOffsetTop值(不保险,可以在updated钩子中获取)
           this.$nextTick(() => {
             this.tabOffsetTop = this.$refs.tabControl.$el.offsetTop
           })
@@ -141,7 +148,6 @@
 
 <style scoped>
   #home {
-    /*position: relative;*/
     height: 100vh;
   }
 

@@ -34,30 +34,30 @@ export default {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  padding: 1rem;
+  padding-bottom: 75px;
+}
+.fashion-list:hover{
+  background-color: #ff8198;
 }
 
 .box {
   background-color: white;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
-  border-radius: 8px;
   width: 200px;
-  
+  margin: 20px;
 }
-.box:hover{
-  background-color: #ff8198;
-}
+
 .image {
   width: 100%;
   height: 100%;
-  border-radius: 6px;
 }
 
 .product-name {
   font-family: 'Times New Roman', Times, serif;
   font-size: large;
   margin-top: 0.5rem;
+  text-align: left;
 }
 
 .product-price {
@@ -66,11 +66,13 @@ export default {
   font-size: smaller;
   font-style: italic;
   margin-top: 0.3rem;
+  text-align: left;
 }
 
 .product-price.passive {
   text-decoration: line-through;
   color: gray;
   opacity: 0.6;
+  text-align: left;
 }
 </style>

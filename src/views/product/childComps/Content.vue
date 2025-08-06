@@ -1,32 +1,30 @@
 <template>
   <div class="content">
-    <div class="name">
-      <slot class="name"> Birinci  </slot>
-    </div>
-    <div>
-      <slot class="price"> 35 lira    </slot>
-    </div>
-    <div class="button"> 
-        <slot> Add to Cart </slot>
-    </div>
+    <div class="name">{{ name }}</div>
+    <div class="price">{{ price }}</div>
+    <div class="button">Add to Cart</div>
   </div>
 </template>
 
 <script>
 export default{
-
+ name:'Content',
+ props:{
+    name:String,
+    price:String
+ }
 }
 </script>
-<style>
+
+<style scoped>
 .content{
     background-color: white;
     padding:100px;
-    padding-left: 150px;
+    padding-left: 100px;
 }
 .name{
   width: 100%;
   height: 20px;
-  padding:30px;
   font-size: large;
   text-align: left;
   color:black;
@@ -34,7 +32,7 @@ export default{
 .price{
  width: 100%;
  height: 20px;
- margin:50px;
+ margin:5px;
  font-size: small;
  color: gray;
  text-align: left;
@@ -43,9 +41,9 @@ export default{
     text-decoration: line-through;
 }
 .button{
-  margin: 15px;
   padding: 5px;
   border-radius: 8px;
+  border-style: solid;
   background-color: #ff8198;
   border-color: #ff8198;
   color: white;

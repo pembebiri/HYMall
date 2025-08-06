@@ -64,14 +64,14 @@
         tabOffsetTop: 0,
         showBackTop: false,
         fashionItems: [
-         { title: 'Birinci', img: require('@/assets/img/home/image1.png'), link: '#' },
-         { title: 'İkinci', img: require('@/assets/img/home/image2.png'), link: '#' },
-         { title: 'Üçüncü', img: require('@/assets/img/home/image3.png'), link: '#' },
-         { title: 'Dördüncü', img: require('@/assets/img/home/image4.png'), link: '#' },
-         { title: 'Beşinci', img: require('@/assets/img/home/image5.png'), link: '#' },
-         { title: 'Altıncı', img: require('@/assets/img/home/image6.png'), link: '#' },
-         { title: 'Yedinci', img: require('@/assets/img/home/image7.png'), link: '#' },
-         { title: 'Sekizinci', img: require('@/assets/img/home/image8.png'), link: '#' }
+         { title: 'Birinci', img: require('@/assets/img/home/image1.png'), price:'400 ₺', link: '#' },
+         { title: 'İkinci', img: require('@/assets/img/home/image2.png'), price:'500 ₺',link: '#' },
+         { title: 'Üçüncü', img: require('@/assets/img/home/image3.png'),  price:'500 ₺', link: '#' },
+         { title: 'Dördüncü', img: require('@/assets/img/home/image4.png'), price:'500 ₺',  link: '#' },
+         { title: 'Beşinci', img: require('@/assets/img/home/image5.png'),  price:'500 ₺', link: '#' },
+         { title: 'Altıncı', img: require('@/assets/img/home/image6.png'),  price:'500 ₺',  link: '#' },
+         { title: 'Yedinci', img: require('@/assets/img/home/image7.png'),  price:'500 ₺', link: '#' },
+         { title: 'Sekizinci', img: require('@/assets/img/home/image8.png'),  price:'500 ₺',  link: '#' }
 ]
       }
     },

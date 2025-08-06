@@ -1,7 +1,7 @@
 <template>
   <div class="fashion-list">
     <div class="box" v-for="(item, index) in items" :key="index">
-      <img :src="item.img" alt="" class="image" />
+    <img :src="item.img" alt="" class="image" @click="goToProduct(item)" />
 
       <div class="product-name">{{ item.title }}</div>
 
@@ -23,6 +23,18 @@ export default {
     isPassive: {
       type: Boolean,
       default: false
+    }
+  },
+  methods:{
+      goToProduct(item) {
+      this.$router.push({
+        name: 'Product',
+        query: {
+          name: item.title,
+          img: item.img,
+          price: item.price 
+        }
+      })
     }
   }
 }

@@ -1,10 +1,8 @@
 <template>
   <div id="profile">
     <nav-bar class="nav-bar"><div slot="center">小码哥商城</div></nav-bar>
-    <!--1.单独封装一个组件: 利用slot知识点-->
     <UserInfo></UserInfo>
 
-    <!--2.没有单独封装: 不同的地方太多, 需要传过多的参数-->
     <section class="account">
       <div class="account-item">
         <div class="number">
@@ -26,7 +24,6 @@
       </div>
     </section>
 
-    <!--3.封装成一个整体-->
     <list-view :list-data="orderList" class="order-list"></list-view>
     <list-view :list-data="serviceList" class="service-list"></list-view>
   </div>
